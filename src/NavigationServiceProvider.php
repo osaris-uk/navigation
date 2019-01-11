@@ -35,7 +35,7 @@ class NavigationServiceProvider extends ServiceProvider
         }
         
         Blade::directive('activeclass', function ($route) {
-            return "{{ request()->route()->getName() === $route ? 'active' : '' }}";
+            return "{{ stripos(request()->route()->getName(), $route) === 0 ? 'active' : '' }}";
         });
     }
 
