@@ -3,6 +3,7 @@
 namespace OsarisUk\Navigation;
 
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use OsarisUk\Navigation\Models\Navigation;
 
