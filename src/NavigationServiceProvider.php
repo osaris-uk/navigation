@@ -32,6 +32,10 @@ class NavigationServiceProvider extends ServiceProvider
             Log::error($e);
             return false;
         }
+        
+        Blade::directive('activeclass', function ($page) {
+            return "{{ request()->is($page) ? 'active' : '' }}";
+        });
     }
 
     /**
