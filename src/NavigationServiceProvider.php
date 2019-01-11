@@ -34,8 +34,8 @@ class NavigationServiceProvider extends ServiceProvider
             return false;
         }
         
-        Blade::directive('activeclass', function ($page) {
-            return "{{ request()->is($page) ? 'active' : '' }}";
+        Blade::directive('activeclass', function ($route) {
+            return "{{ request()->route()->getName() === $route ? 'active' : '' }}";
         });
     }
 
