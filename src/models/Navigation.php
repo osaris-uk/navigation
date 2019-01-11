@@ -26,12 +26,32 @@ class Navigation extends Model
         'icon',
         'parent_id',
         'order_by',
+        'route',
         'target',
-        'target_append',
         'realm',
-        'user_role',
+        'permission',
         'disabled',
     ];
+
+    public static function customNames()
+    {
+        return [
+            'table_name' => 'Navigation',
+            'id' => 'ID',
+            'title' => 'Title',
+            'icon' => 'Icon',
+            'parent_id' => 'Parent',
+            'order_by' => 'Order',
+            'route' => 'Route',
+            'target' => 'Target',
+            'realm' => 'Realm',
+            'permission' => 'Permission',
+            'disabled' => 'Disabled',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
+            'deleted_at' => 'Deleted At'
+        ];
+    }
 
     public function parent()
     {

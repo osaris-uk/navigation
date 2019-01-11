@@ -19,10 +19,10 @@ class CreateNavigationsTable extends Migration
             $table->string('icon')->nullable();
             $table->integer('parent_id')->unsigned()->nullable();
             $table->integer('order_by')->nullable();
-            $table->string('target');
-            $table->string('target_append')->nullable();
-            $table->string('realm');
-            $table->string('user_role')->nullable();
+            $table->string('route')->nullable();
+            $table->string('target')->nullable();
+            $table->string('realm')->default('main');
+            $table->string('permission')->nullable();
             $table->boolean('disabled')->default(false);
             $table->timestamps();
             $table->softDeletes();

@@ -34,12 +34,12 @@ Here is a simple example of a blade implementation:
     	
         @if (count($navItem['children']))
             <li class="has-child">
-                <a href="{{ route($navItem->target) }}">{{ $navItem->title }}</a>
+                <a href="{{ $navItem->route ? route($navItem->route) : '' }}{{ $navItem->target }}">{{ $navItem->title }}</a>
                 <div class="dropdown left-indent">
                     <ul class="dropdown-items">
                         @foreach($navItem['children'] as $child)
                             <li>
-                                <a href="{{ route($child->target) }}">{{ $child->title }}</a>
+                                <a href="{{ $child->route ? route($child->route) : '' }}{{ $child->target }}">{{ $child->title }}</a>
                             </li>
                         @endforeach
                     </ul>
@@ -47,7 +47,7 @@ Here is a simple example of a blade implementation:
             </li>
         @else
             <li>
-                <a href="{{ route($navItem->target) }}{{ $navItem->target_append }}">{{ $navItem->title }}</a>
+                <a href="{{ $navItem->route ? route($navItem->route) : '' }}{{ $navItem->target }}">{{ $navItem->title }}</a>
             </li>
         @endif
     @endforeach
