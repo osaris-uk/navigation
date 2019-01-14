@@ -37,6 +37,10 @@ class NavigationServiceProvider extends ServiceProvider
         Blade::directive('activeclass', function ($route) {
             return "{{ stripos(request()->route()->getName(), $route) === 0 ? 'active' : '' }}";
         });
+
+        Blade::directive('openclass', function ($children) {
+            return "<?php foreach($children as \$child) {if(stripos(request()->route()->getName(), \$child->route) === 0) {echo 'open';}} ?>";
+        });
     }
 
     /**
